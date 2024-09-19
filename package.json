@@ -16,7 +16,7 @@
     "@solana/web3.js": "^1.95.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "solana-active-wallet-react": "^1.0.8"
+    "solana-active-wallet-react": "^1.0.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

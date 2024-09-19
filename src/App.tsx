@@ -5,8 +5,8 @@ import { formatAddress } from "./utils/formatAddress";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 function App() {
-  const { publicKey, connected, disconnect } = useWallet();
-  const { activePublicKey } = useActiveWallet(publicKey);
+  const { publicKey, wallet, connected, disconnect } = useWallet();
+  const { activePublicKey } = useActiveWallet(publicKey, wallet);
   const { setVisible: setModalVisible } = useWalletModal();
 
   return (
