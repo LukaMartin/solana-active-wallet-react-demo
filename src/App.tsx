@@ -1,12 +1,11 @@
 import "./App.css";
 import useActiveWallet from "solana-active-wallet-react";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { formatAddress } from "./utils/formatAddress";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 function App() {
   const { publicKey, wallet, connected, disconnect } = useWallet();
-  const { activePublicKey } = useActiveWallet(publicKey, wallet);
+  const { slicedWalletAddress } = useActiveWallet(publicKey, wallet);
   const { setVisible: setModalVisible } = useWalletModal();
 
   return (
@@ -15,7 +14,7 @@ function App() {
 
       <button className="wallet-button" onClick={() => !connected && setModalVisible(true)}>
         {connected
-          ? formatAddress(activePublicKey?.toString(), 5)
+          ? slicedWalletAddress
           : "Connect Wallet"}
       </button>
 
