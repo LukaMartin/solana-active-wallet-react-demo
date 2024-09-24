@@ -1,11 +1,11 @@
 import "./App.css";
-import useActiveWallet from "solana-active-wallet-react";
+import useSolanaActiveWallet from "solana-active-wallet-react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 
 function App() {
   const { publicKey, wallet, connected, disconnect } = useWallet();
-  const { slicedWalletAddress } = useActiveWallet(publicKey, wallet);
+  const { slicedWalletAddress } = useSolanaActiveWallet(publicKey, wallet);
   const { setVisible: setModalVisible } = useWalletModal();
 
   return (
